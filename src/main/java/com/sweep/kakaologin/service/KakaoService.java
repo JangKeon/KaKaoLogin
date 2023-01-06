@@ -90,10 +90,15 @@ public class KakaoService {
             JsonObject kakaoAccount = element.getAsJsonObject().get("kakao_account").getAsJsonObject();
 
             String nickname = properties.getAsJsonObject().get("nickname").getAsString();
+            String profile_image = properties.getAsJsonObject().get("profile_image").getAsString();
             String email = kakaoAccount.getAsJsonObject().get("email").getAsString();
+            String user_id = element.getAsJsonObject().get("id").getAsString();
 
-            userInfo.put("nickname", nickname);
+            userInfo.put("profile_image", profile_image);
             userInfo.put("email", email);
+            userInfo.put("nickname", nickname);
+            userInfo.put("user_id", user_id);
+
 
 
         } catch (Exception e) {
