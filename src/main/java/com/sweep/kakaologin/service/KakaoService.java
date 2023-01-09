@@ -13,7 +13,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
 public class KakaoService {
-
+    // 토큰 받아오기
     public String getAccessToken(String code) {
         String accessToken = "";
         String refreshToken = "";
@@ -61,7 +61,7 @@ public class KakaoService {
         return accessToken;
     }
 
-
+    // 사용자 정보 받아오기
     public HashMap<String, Object> getUserInfo(String accessToken) {
         HashMap<String, Object> userInfo = new HashMap<String, Object>();
         String reqUrl = "https://kapi.kakao.com/v2/user/me"; //Request - AccessToken 사용
