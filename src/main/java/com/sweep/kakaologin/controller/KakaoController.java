@@ -13,7 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class KakaoController {
     KakaoService kakaoApi = new KakaoService();
 
-    @RequestMapping(value="/login")
+    @RequestMapping(value="/kakaologin")
     public ModelAndView login(@RequestParam("code") String code, HttpSession session) {
         ModelAndView mav = new ModelAndView();
         // 1번 인증코드 요청 전달

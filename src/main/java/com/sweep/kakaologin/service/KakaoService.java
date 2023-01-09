@@ -28,8 +28,8 @@ public class KakaoService {
             BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(conn.getOutputStream()));
             StringBuilder sb = new StringBuilder();
             sb.append("grant_type=authorization_code");
-            sb.append("&client_id=9fadcf52b1b1a29c3e8b9d5047151491"); //JS 키
-            sb.append("&redirect_uri=http://localhost:8080/login");
+            sb.append("&client_id=9fadcf52b1b1a29c3e8b9d5047151491"); //REST API 키
+            sb.append("&redirect_uri=http://localhost:8080/kakaologin");
             sb.append("&code="+code);
 
             bw.write(sb.toString());
