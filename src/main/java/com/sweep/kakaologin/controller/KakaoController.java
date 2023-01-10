@@ -30,30 +30,17 @@ public class KakaoController {
             session.setAttribute("accessToken", accessToken);
         }
 
-        // Redirect를 위한 Redirectview 생성과 넘겨줄 파라미터 키-값 추가
+        // Redirect를 위한 Redirectview 생성과 넘겨줄 파라미터 키-값 추가, 파라미터 값들 노출 여부 설정
         RedirectView redirectView = new RedirectView();
+        redirectView.setExposeModelAttributes(false);
         redirectView.addStaticAttribute("userId", userInfo.get("email"));
         redirectView.addStaticAttribute("test", 1234);
         redirectView.setUrl("http://localhost:3000/home/landing");
 
+
         ModelAndView mav = new ModelAndView();
         mav.setView(redirectView);
         return mav;
-
-        /*String projectUrl = "redirect:http://localhost:3000";
-        mav.addObject("userId", userInfo.get("email"));
-        mav.setViewName("redirect:" + projectUrl);
-        return mav;*/
-
-
-        /*String redirect_url = "http://localhost:3000/test";
-        //try {
-            response.sendRedirect(redirect_url);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        //return new RedirectView("localhost:3000/test");
-        return null;*/
     }
 
     // 카카오 로그아웃
